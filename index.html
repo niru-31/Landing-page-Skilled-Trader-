@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StockMastery — Free Webinar for Students</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Skilled<span>Trader</span></div>
+  <div class="nav-links">
+    <a href="#learn">Curriculum</a>
+    <a href="#mentor">Mentor</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#register" class="nav-cta">Register Free →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+  <div class="hero-inner">
+    <!-- LEFT -->
+    <div>
+      <div class="badge">
+        <div class="pulse-dot"></div>
+        Live Webinar — 100% Free for Students
+      </div>
+      <h1>
+        Learn to Trade<br>
+        <span class="accent">Stocks</span> Like a<br>
+        <span class="gold">Pro</span>
+      </h1>
+      <p class="hero-sub">
+        Join India's most practical stock market webinar. Built for students — zero experience needed. Learn the strategies top traders use, live.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">100+</div>
+          <div class="stat-label">Students Enrolled</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">96%</div>
+          <div class="stat-label">Satisfaction Rate</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">₹0</div>
+          <div class="stat-label">Cost to Join</div>
+        </div>
+      </div>
+
+      <div class="webinar-meta">
+        <div class="meta-item">
+          <div class="meta-icon">📅</div>
+          <span>Saturday, 16 May 2026 &nbsp;—&nbsp; 8:00 PM IST</span>
+        </div>
+        <div class="meta-item">
+          <div class="meta-icon">🎥</div>
+          <span>Live on Google-Meet (link sent after registration)</span>
+        </div>
+        <div class="meta-item">
+          <div class="meta-icon">🎓</div>
+          <span>Open to all students &amp; beginners</span>
+        </div>
+        <div class="meta-item">
+          <div class="meta-icon">⏱️</div>
+          <span>Duration: 60 minutes + Q&amp;A session</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT — REGISTER CARD -->
+    <div class="register-card" id="register">
+      <div class="card-top-label">🔥 Register Now</div>
+      <div class="card-title">Claim Your Free Seat</div>
+      <div class="card-sub">Only 27 seats remaining out of 100</div>
+
+      <div class="seats-bar-wrap">
+        <div class="seats-label">
+          <span>Seats filling up</span>
+          <span>73% booked</span>
+        </div>
+        <div class="seats-bar"><div class="seats-fill"></div></div>
+      </div>
+
+      <div id="form-wrap">
+        <div class="form-row">
+          <input class="form-input" type="text" placeholder="Your Full Name" id="inp-name" />
+          <input class="form-input" type="email" placeholder="Email Address" id="inp-email" />
+          <input class="form-input" type="tel" placeholder="WhatsApp Number" id="inp-phone" />
+          <select class="form-select" id="inp-course">
+            <option value="" disabled selected>Your Current Year / Course</option>
+            <option>School — Class 11 / 12</option>
+            <option>College — 1st Year</option>
+            <option>College — 2nd Year</option>
+            <option>College — 3rd Year</option>
+            <option>Post Graduate</option>
+            <option>Working Professional</option>
+          </select>
+        </div>
+        <button class="cta-btn" onclick="handleRegister()">
+          Register My Free Seat →
+        </button>
+        <p class="free-tag"><strong>100% FREE</strong> · No credit card · No hidden fees</p>
+      </div>
+
+      <div class="success-state" id="success-state">
+        <div class="success-icon">🎉</div>
+        <div class="success-title">You're Registered!</div>
+        <p class="success-msg">Check your email for the Zoom link. We'll also send a WhatsApp reminder before the webinar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-section">
+  <div class="ticker-track">
+    <div class="ticker-item"><span class="tick-sym">RELIANCE</span> <span class="tick-up">▲ 2,934.50 (+1.2%)</span></div>
+    <div class="ticker-item"><span class="tick-sym">TCS</span> <span class="tick-up">▲ 3,812.00 (+0.8%)</span></div>
+    <div class="ticker-item"><span class="tick-sym">INFOSYS</span> <span class="tick-down">▼ 1,478.30 (-0.4%)</span></div>
+    <div class="ticker-item"><span class="tick-sym">HDFC BANK</span> <span class="tick-up">▲ 1,634.70 (+1.5%)</span></div>
+    <div class="ticker-item"><span class="tick-sym">NIFTY 50</span> <span class="tick-up">▲ 22,450 (+0.6%)</span></div>
+    <div class="ticker-item"><span class="tick-sym">SENSEX</span> <span class="tick-up">▲ 73,890 (+0.7%)</span></div>
+    <div class="ticker-item"><span class="tick-sym">WIPRO</span> <span class="tick-down">▼ 462.10 (-0.3%)</span></div>
+    <div class="ticker-item"><span class="tick-sym">TATAMOTORS</span> <span class="tick-up">▲ 948.60 (+2.1%)</span></div>
+    <div class="ticker-item"><span class="tick-sym">BAJFINANCE</span> <span class="tick-up">▲ 7,132.00 (+0.9%)</span></div>
+    <!-- repeat for seamless loop -->
+    <div class="ticker-item"><span class="tick-sym">RELIANCE</span> <span class="tick-up">▲ 2,934.50 (+1.2%)</span></div>
+    <div class="ticker-item"><span class="tick-sym">TCS</span> <span class="tick-up">▲ 3,812.00 (+0.8%)</span></div>
+    <div class="ticker-item"><span class="tick-sym">INFOSYS</span> <span class="tick-down">▼ 1,478.30 (-0.4%)</span></div>
+    <div class="ticker-item"><span class="tick-sym">HDFC BANK</span> <span class="tick-up">▲ 1,634.70 (+1.5%)</span></div>
+    <div class="ticker-item"><span class="tick-sym">NIFTY 50</span> <span class="tick-up">▲ 22,450 (+0.6%)</span></div>
+    <div class="ticker-item"><span class="tick-sym">SENSEX</span> <span class="tick-up">▲ 73,890 (+0.7%)</span></div>
+    <div class="ticker-item"><span class="tick-sym">WIPRO</span> <span class="tick-down">▼ 462.10 (-0.3%)</span></div>
+    <div class="ticker-item"><span class="tick-sym">TATAMOTORS</span> <span class="tick-up">▲ 948.60 (+2.1%)</span></div>
+    <div class="ticker-item"><span class="tick-sym">BAJFINANCE</span> <span class="tick-up">▲ 7,132.00 (+0.9%)</span></div>
+  </div>
+</div>
+
+<!-- WHAT YOU'LL LEARN -->
+<section id="learn">
+  <div class="section-inner">
+    <div class="section-label">Webinar Curriculum</div>
+    <h2>What You'll Learn</h2>
+    <p class="section-sub">90 minutes of pure value — no fluff, no upselling, just actionable market knowledge.</p>
+
+    <div class="learn-grid">
+      <div class="learn-card">
+        <div class="learn-num">01</div>
+        <div class="learn-title">Stock Market Basics Demystified</div>
+        <div class="learn-desc">How the stock market works, who the key players are, and how money actually flows through equity markets.</div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-num">02</div>
+        <div class="learn-title">How to Read Charts Like a Trader</div>
+        <div class="learn-desc">Candlestick patterns, support & resistance, and the 3 chart signals every beginner must know before placing a trade.</div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-num">03</div>
+        <div class="learn-title">Picking Winning Stocks</div>
+        <div class="learn-desc">A simple 5-point checklist to evaluate any stock. Fundamental vs technical analysis explained in plain language.</div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-num">04</div>
+        <div class="learn-title">Risk Management for Students</div>
+        <div class="learn-desc">How to start with as little as ₹500. Stop-loss strategies and position sizing so you never blow your account.</div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-num">05</div>
+        <div class="learn-title">Open Your First Demat Account</div>
+        <div class="learn-desc">Step-by-step walkthrough: choosing a broker, avoiding hidden charges, and placing your very first trade live.</div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-num">06</div>
+        <div class="learn-title">Build a Student Investment Plan</div>
+        <div class="learn-desc">How to invest ₹500–₹5000/month through college and build real wealth before you even graduate.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REPLACE YOUR ENTIRE MENTOR SECTION + OLD MENTOR CSS WITH THIS -->
+
+<!-- =========================
+MENTOR SECTION
+========================= -->
+
+<section class="mentor-section" id="mentor">
+
+  <div class="section-label">Your Mentor</div>
+
+  <h2>Pawan Jadhav</h2>
+
+  <!-- IMAGE -->
+  <div class="mentor-image-wrap">
+    <div class="mentor-image">
+      <img src="Pawan.png" alt="Pawan Jadhav">
+    </div>
+  </div>
+
+  <!-- TEXT -->
+  <p class="mentor-text">
+    A Stock Market Educator and Founder of SkilledTrader, a platform focused
+    on teaching the Stock Market in a structured and beginner-friendly way.
+
+    With 4+ years of hands-on market experience, I specialize in Technical
+    Analysis, Equity Research, and Derivatives Trading.
+
+    My goal is to help students and beginners understand the Stock Market
+    step-by-step instead of learning randomly from the internet.
+
+    Previously, I worked as an Equity Analyst and Faculty at BullBear Academy,
+    where I trained students in stock market concepts and trading fundamentals.
+
+    Through SkilledTrader, I create structured educational content to simplify
+    trading and investing, especially for students and beginners from
+    non-finance backgrounds.
+  </p>
+
+  <!-- CARDS -->
+  <div class="credentials-grid">
+
+    <!-- CARD 1 -->
+    <div class="cred-card">
+      <div class="cred-top">
+
+        <div class="cred-icon">🏆</div>
+
+        <div>
+          <div class="cred-title">
+            NISM 8 Certified — Derivatives
+          </div>
+
+          <div class="cred-desc">
+            Equity Derivatives certification from the National Institute of Securities Markets.
+          </div>
+
+          <div class="cred-highlight">
+            ID: NISM-202400106015
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="cred-card">
+      <div class="cred-top">
+
+        <div class="cred-icon">🎓</div>
+
+        <div>
+          <div class="cred-title">
+            B.VOC Finance & Financial Management
+          </div>
+
+          <div class="cred-desc">
+            KBC NMU · 2023–2026
+          </div>
+
+          <div class="cred-highlight">
+            Currently in Final Year
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="cred-card">
+      <div class="cred-top">
+
+        <div class="cred-icon">📘</div>
+
+        <div>
+          <div class="cred-title">
+            Equity Research Cohort
+          </div>
+
+          <div class="cred-desc">
+            The Valuation School — financial modelling, valuation & analyst methodology.
+          </div>
+
+          <div class="cred-highlight">
+            2025 · Research Analyst
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="cred-card">
+      <div class="cred-top">
+
+        <div class="cred-icon">🎬</div>
+
+        <div>
+          <div class="cred-title">
+            NISM Reel Making Contest
+          </div>
+
+          <div class="cred-desc">
+            Certificate of Participation — 60-second finance explainer reel.
+          </div>
+
+          <div class="cred-highlight">
+            NISM · 2024
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="reviews">
+  <div class="section-inner">
+    <div class="section-label">Student Reviews</div>
+    <h2>What Students Say</h2>
+
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p class="test-text">"I was completely clueless about stocks. After Arjun's webinar I opened my Demat account the same evening and placed my first trade within a week. Absolutely life-changing for a college student."</p>
+        <div class="test-author">
+          <div class="author-avatar">PK</div>
+          <div>
+            <div class="author-name">Priya K.</div>
+            <div class="author-tag">B.Com 2nd Year, Pune</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p class="test-text">"The chart reading session blew my mind. In 20 minutes he explained what 3 months of YouTube videos couldn't. And it's FREE — I kept waiting for the upsell. It never came."</p>
+        <div class="test-author">
+          <div class="author-avatar">RS</div>
+          <div>
+            <div class="author-name">Rahul S.</div>
+            <div class="author-tag">Engineering 3rd Year, Chennai</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p class="test-text">"My portfolio is up 18% in 4 months since attending this webinar. The risk management framework alone is worth gold. Every student must attend this at least once."</p>
+        <div class="test-author">
+          <div class="author-avatar">AN</div>
+          <div>
+            <div class="author-name">Anjali N.</div>
+            <div class="author-tag">MBA Finance, Bangalore</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-glow"></div>
+  <div class="section-inner">
+    <div class="section-label">Don't Miss Out</div>
+    <h2>Only 27 Seats Left.<br>Register Before They're Gone.</h2>
+    <p class="section-sub" style="margin: 16px auto 40px;">This webinar is 100% free. We run it once a month and seats fill up fast. Secure yours now.</p>
+    <div class="cta-group">
+      <a href="#register" class="btn-primary">Reserve My Free Seat →</a>
+      <a href="#learn" class="btn-outline">View Curriculum</a>
+    </div>
+    <p style="font-size: 13px; color: var(--muted); margin-top: 24px;">No payment needed · Certificate of participation included · Replay available for 7 days</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo" style="font-size: 20px;">Stock<span style="color: var(--text);">Mastery</span></div>
+  <div>© 2026 SkilledTrader. For educational purposes only. Not SEBI investment advice.</div>
+  <div style="display: flex; gap: 20px;">
+    <a href="#" style="color: var(--muted); text-decoration: none;">Privacy</a>
+    <a href="#" style="color: var(--muted); text-decoration: none;">Terms</a>
+    <a href="#" style="color: var(--muted); text-decoration: none;">Contact</a>
+  </div>
+</footer>
+<!-- SUCCESS POPUP -->
+<div id="popup" class="popup">
+  <div class="popup-card">
+
+    <div class="popup-icon">✓</div>
+
+    <h3>Registration Successful</h3>
+
+    <p>
+      Your free webinar seat has been reserved successfully.
+      Check your email & WhatsApp for updates.
+    </p>
+
+    <button onclick="closePopup()">Awesome 🚀</button>
+
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
